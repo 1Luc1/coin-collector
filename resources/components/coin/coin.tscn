@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://resources/components/coin/coin.gd" id="1_r41yn"]
+[ext_resource type="Texture2D" path="res://assets/tile_sets/coin_isometric.png" id="2_oltux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syvxg"]
+atlas = ExtResource("2_oltux")
+region = Rect2(5, 6, 83, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50vkk"]
+atlas = ExtResource("2_oltux")
+region = Rect2(88, 6, 83, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha760"]
+atlas = ExtResource("2_oltux")
+region = Rect2(171, 6, 83, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km3w7"]
+atlas = ExtResource("2_oltux")
+region = Rect2(5, 89, 83, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ppge"]
+atlas = ExtResource("2_oltux")
+region = Rect2(88, 89, 83, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8kk7"]
+atlas = ExtResource("2_oltux")
+region = Rect2(171, 89, 83, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkclr"]
+atlas = ExtResource("2_oltux")
+region = Rect2(5, 172, 83, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77ctm"]
+atlas = ExtResource("2_oltux")
+region = Rect2(88, 172, 83, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q75r"]
+atlas = ExtResource("2_oltux")
+region = Rect2(171, 172, 83, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xco0"]
+animations = [{
+"frames": [SubResource("AtlasTexture_syvxg"), SubResource("AtlasTexture_50vkk"), SubResource("AtlasTexture_ha760"), SubResource("AtlasTexture_km3w7"), SubResource("AtlasTexture_2ppge"), SubResource("AtlasTexture_d8kk7"), SubResource("AtlasTexture_fkclr"), SubResource("AtlasTexture_77ctm"), SubResource("AtlasTexture_3q75r")],
+"loop": true,
+"name": &"rotate",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_20a4i"]
+radius = 20.0
+height = 82.0
+
+[node name="Coin" type="Area2D"]
+position = Vector2(0, -10)
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_r41yn")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_1xco0")
+animation = &"rotate"
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 27)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_20a4i")
+
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]

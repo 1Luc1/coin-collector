@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://crs231tvols7w"]
+
+[ext_resource type="TileSet" uid="uid://chbono26jnxpy" path="res://assets/tileset.tres" id="1_5y38m"]
+[ext_resource type="PackedScene" path="res://resources/components/coin/coin.tscn" id="2_j2jm7"]
+[ext_resource type="PackedScene" uid="uid://d3vlw6flqmvnm" path="res://resources/ui/welcome_screen/welcome_screen.tscn" id="2_qy230"]
+[ext_resource type="PackedScene" uid="uid://35vfvsxsfyu5" path="res://resources/components/player/overview_player.tscn" id="3_baw8o"]
+[ext_resource type="AudioStream" uid="uid://jpmhcgxuap4p" path="res://assets/audio/Puzzle-Dreams.mp3" id="4_gpsdj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_5y38m")
+format = 2
+layer_0/name = "floor"
+layer_0/tile_data = PackedInt32Array(0, 0, 11, 65536, 0, 11, 131072, 0, 11, 196608, 0, 11, 327681, 0, 11, 458753, 0, 11, 524290, 0, 11, 589825, 0, 11, 589826, 0, 11, 458754, 0, 11, 393218, 0, 11, 327682, 0, 11, 262146, 0, 11, 196610, 0, 11, 131074, 0, 11, 65538, 0, 11, 2, 0, 11, -65534, 0, 11, -131069, 0, 11, 196609, 0, 11, 524289, 0, 11, 589824, 0, 11, 655360, 0, 11, 720896, 0, 11, 655361, 0, 11, 720897, 0, 11, 786433, 0, 11, 851969, 0, 11, 655364, 0, 11, 524292, 0, 11, 458756, 0, 11, 393220, 0, 11, 327684, 0, 11, 262148, 0, 11, 196611, 0, 11, 131075, 0, 11, 65539, 0, 11, 393219, 0, 11, 458755, 0, 11, 196612, 0, 11, 131076, 0, 11, 3, 0, 11, 524291, 0, 11, 589827, 0, 11, 327683, 0, 11, 262147, 0, 11, 458752, 0, 11, 786432, 0, 11, 851968, 0, 11, 786434, 0, 11, 720898, 0, 11, 655362, 0, 11, 327680, 0, 11, 393216, 0, 11, 524287, 0, 11, 524288, 0, 11, 655359, 0, 11, 720895, 0, 11, 786431, 0, 11, 655363, 0, 11, 393217, 0, 11, 262145, 0, 11)
+layer_1/name = "wall"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(458752, 1, 3, 655359, 131106, 2, 655361, 34, 2, 262148, 131106, 2, 393221, 34, 2, 917503, 65538, 6, 720900, 2, 2, 720899, 65538, 6, 327680, 11, 1, 3, 1, 3)
+
+[node name="Coin" parent="TileMap" instance=ExtResource("2_j2jm7")]
+position = Vector2(923, 508)
+
+[node name="OverviewPlayer" parent="TileMap" instance=ExtResource("3_baw8o")]
+position = Vector2(451, 750)
+
+[node name="UI" type="Node2D" parent="."]
+z_index = 2
+
+[node name="WelcomeScreen" parent="UI" instance=ExtResource("2_qy230")]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_custom_anchors = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(92, 98)
+stream = ExtResource("4_gpsdj")
+autoplay = true

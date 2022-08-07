@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://drptgw3excs3b"]
+
+[ext_resource type="Script" path="res://resources/components/path_follow/path_follow_2d.gd" id="1_rbcmy"]
+[ext_resource type="PackedScene" uid="uid://35vfvsxsfyu5" path="res://resources/components/player/overview_player.tscn" id="2_dx655"]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_rbcmy")
+
+[node name="OverviewPlayer" parent="." groups=["player"] instance=ExtResource("2_dx655")]

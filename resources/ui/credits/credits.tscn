@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://2y2nhblqtu1n"]
+
+[ext_resource type="Script" path="res://resources/ui/credits/credits.gd" id="1_hymty"]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_hymty")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -140.0
+offset_right = 469.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 60
+columns = 2
+metadata/_edit_layout_mode = 1
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = 199.0
+offset_right = 68.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+metadata/_edit_layout_mode = 1
+
+[node name="BackButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -57.0
+offset_right = -32.0
+offset_bottom = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Back"
+metadata/_edit_layout_mode = 1
+
+[connection signal="pressed" from="BackButton" to="." method="_on_welcome_screen_button_pressed"]
