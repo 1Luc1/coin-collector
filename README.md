@@ -20,7 +20,7 @@ Key Features
 
 - Music and Sound Effects
 - 2D Animations
-- build with Godot 4.0 – Alpha 13
+- build with Godot 4.0 – Alpha 14
 
 
 Known Issues

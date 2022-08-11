@@ -11,7 +11,7 @@ func set_save_game_path(path):
 
 
 func write_savegame() -> void:
-	ResourceSaver.save(save_game_path, self)
+	ResourceSaver.save(self, save_game_path)
 
 
 func get_collected_coins() -> int:
