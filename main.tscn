@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://crs231tvols7w"]
 
 [ext_resource type="TileSet" uid="uid://chbono26jnxpy" path="res://assets/tileset.tres" id="1_5y38m"]
-[ext_resource type="PackedScene" path="res://resources/components/coin/coin.tscn" id="2_j2jm7"]
+[ext_resource type="PackedScene" uid="uid://bh7w60uvjay8e" path="res://resources/components/coin/coin.tscn" id="2_j2jm7"]
 [ext_resource type="PackedScene" uid="uid://d3vlw6flqmvnm" path="res://resources/ui/welcome_screen/welcome_screen.tscn" id="2_qy230"]
 [ext_resource type="PackedScene" uid="uid://35vfvsxsfyu5" path="res://resources/components/player/overview_player.tscn" id="3_baw8o"]
 [ext_resource type="AudioStream" uid="uid://jpmhcgxuap4p" path="res://assets/audio/Puzzle-Dreams.mp3" id="4_gpsdj"]
@@ -31,6 +31,7 @@ position = Vector2(451, 750)
 z_index = 2
 
 [node name="WelcomeScreen" parent="UI" instance=ExtResource("2_qy230")]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

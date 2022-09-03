@@ -525,7 +525,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_ra1wy")
 parameters/Idle/blend_position = Vector2(-0.00299698, 0.533188)
-parameters/Walk/blend_position = Vector2(-0.00439751, 0.857143)
+parameters/Walk/blend_position = Vector2(-0.354784, 0.600437)
 
 [node name="AudioCollectCoin" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamSample_0y2s6")

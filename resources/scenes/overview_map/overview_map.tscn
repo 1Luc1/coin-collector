@@ -54,6 +54,8 @@ current = true
 zoom = Vector2(0.786, 0.786)
 
 [node name="Gui" type="Control" parent="." groups=["gui"]]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 595.0
 offset_top = 686.0
 offset_right = 1121.0

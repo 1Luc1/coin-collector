@@ -36,6 +36,11 @@ SceneTransition="*res://resources/components/globals/scene_transition.tscn"
 window/size/viewport_width=1440
 window/size/viewport_height=900
 
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
+
 [input]
 
 left={

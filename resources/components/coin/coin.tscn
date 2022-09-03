@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=14 format=3 uid="uid://bh7w60uvjay8e"]
 
 [ext_resource type="Script" path="res://resources/components/coin/coin.gd" id="1_r41yn"]
-[ext_resource type="Texture2D" path="res://assets/tile_sets/coin_isometric.png" id="2_oltux"]
+[ext_resource type="Texture2D" uid="uid://duvhiiri2hepb" path="res://assets/tile_sets/coin_isometric.png" id="2_oltux"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_syvxg"]
 atlas = ExtResource("2_oltux")
@@ -61,7 +61,7 @@ metadata/_edit_horizontal_guides_ = []
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_1xco0")
 animation = &"rotate"
-frame = 5
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
