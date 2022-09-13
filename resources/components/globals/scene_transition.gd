@@ -3,7 +3,7 @@ extends CanvasLayer
 func change_scene(target: String) -> void:
 	$AnimationPlayer.play("dissolve")
 	await $AnimationPlayer.animation_finished
-	get_tree().change_scene(target)
+	get_tree().change_scene_to_file(target)
 	$AnimationPlayer.play_backwards("dissolve")
 
 func change_scene_to(packed_scene: Resource, scene_name: String) -> void:
@@ -12,6 +12,6 @@ func change_scene_to(packed_scene: Resource, scene_name: String) -> void:
 	$Label.text = scene_name
 	$AnimationPlayer.play("show_label")
 	await $AnimationPlayer.animation_finished
-	get_tree().change_scene_to(packed_scene)
+	get_tree().change_scene_to_packed(packed_scene)
 	$Label.text = ""
 	$AnimationPlayer.play_backwards("dissolve")
