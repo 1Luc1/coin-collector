@@ -479,7 +479,7 @@ position = Vector2(0, -60)
 texture = ExtResource("2_ox7jn")
 hframes = 24
 vframes = 12
-frame = 247
+frame = 245
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -525,10 +525,11 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_ra1wy")
 parameters/Idle/blend_position = Vector2(-0.00299698, 0.533188)
-parameters/Walk/blend_position = Vector2(-0.354784, 0.600437)
+parameters/Walk/blend_position = Vector2(0.37234, 0.395238)
 
 [node name="AudioCollectCoin" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamSample_0y2s6")
 
 [node name="AudioWalk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_23iof")
 volume_db = -10.0

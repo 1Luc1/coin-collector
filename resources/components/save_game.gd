@@ -25,8 +25,7 @@ func get_collected_coins() -> int:
 func delete_savegame() -> bool:
 	var success: bool = false
 	if save_exists(save_game_path):
-		var dir = Directory.new()
-		dir.open("user://")
+		var dir = DirAccess.open("user://")
 		success = dir.remove(save_game_path) == OK
 	return success
 

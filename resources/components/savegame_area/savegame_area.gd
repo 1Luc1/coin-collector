@@ -71,9 +71,9 @@ func set_label_3d(set_label) -> void:
 		label_3d.text = ""
 		
 func get_max_coins_count() -> int:
-	var dir = Directory.new()
+	var dir := DirAccess.open("res://resources/scenes/levels/")
 	var max_coins := 0
-	if dir.open("res://resources/scenes/levels/") == OK:
+	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
