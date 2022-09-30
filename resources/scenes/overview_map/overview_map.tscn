@@ -63,6 +63,7 @@ offset_bottom = 981.0
 script = ExtResource("2_x6770")
 
 [node name="coin_label" type="Label" parent="Gui"]
+layout_mode = 0
 offset_left = 178.0
 offset_top = 88.0
 offset_right = 244.0
@@ -70,6 +71,7 @@ offset_bottom = 133.0
 theme_override_font_sizes/font_size = 30
 
 [node name="timer_label" type="Label" parent="Gui"]
+layout_mode = 0
 offset_left = 179.0
 offset_top = 155.0
 offset_right = 245.0

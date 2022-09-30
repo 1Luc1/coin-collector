@@ -11,7 +11,6 @@ signal activated(pad)
 @export var level_coins: String = "-"
 
 var is_active: bool = false
-# TODO how to use set_process() instead of bool var?
 
 func _process(_delta):
 	if is_active:
