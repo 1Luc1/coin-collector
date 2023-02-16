@@ -24,7 +24,7 @@ func get_collected_coins() -> int:
 
 func delete_savegame() -> bool:
 	var success: bool = false
-	if save_exists(save_game_path):
+	if SaveGame.save_exists(save_game_path):
 		var dir = DirAccess.open("user://")
 		success = dir.remove(save_game_path) == OK
 	return success
@@ -45,4 +45,4 @@ static func save_exists(path) -> bool:
 
 
 static func load_savegame(path) -> Resource:
-	return ResourceLoader.load(path, "", true)
+	return ResourceLoader.load(path, "")

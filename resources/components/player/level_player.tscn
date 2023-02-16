@@ -112,6 +112,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0, 0.3)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_62k47"]
 resource_name = "walk_down_left"
@@ -147,6 +148,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0, 0.3)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_wm2kd"]
 resource_name = "walk_down_right"
@@ -182,6 +184,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0, 0.3)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_dowk4"]
 resource_name = "walk_left"
@@ -217,6 +220,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0, 0.3)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_up61g"]
 resource_name = "Neue Animation"
@@ -252,6 +256,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0, 0.3)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_01hwb"]
 resource_name = "walk_up"
@@ -287,6 +292,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0, 0.3)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_rpepk"]
 resource_name = "walk_up_left"
@@ -322,6 +328,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0, 0.3)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_nyhxa"]
 resource_name = "walk_up_right"
@@ -357,6 +364,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0, 0.3)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4ey57"]
 _data = {
@@ -445,15 +453,16 @@ max_space = Vector2(1, 1.1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kc1x8"]
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s0lgr"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_htkjf"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6h5fm"]
+states/End/position = Vector2(782, 140)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_agrai")
 states/Idle/position = Vector2(378, 100)
+states/Start/position = Vector2(199, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_vsjlu")
 states/Walk/position = Vector2(574, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_kc1x8"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_s0lgr"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_htkjf")]
@@ -479,10 +488,9 @@ position = Vector2(0, -60)
 texture = ExtResource("2_ox7jn")
 hframes = 24
 vframes = 12
-frame = 245
+frame = 33
 
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
 zoom = Vector2(0.906, 0.906)
 
 [node name="Timer" type="Label" parent="Camera2D"]
@@ -524,12 +532,11 @@ tree_root = SubResource("AnimationNodeStateMachine_6h5fm")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_ra1wy")
-parameters/Idle/blend_position = Vector2(-0.00299698, 0.533188)
-parameters/Walk/blend_position = Vector2(0.37234, 0.395238)
+parameters/Idle/blend_position = Vector2(-0.459184, 0.0912664)
+parameters/Walk/blend_position = Vector2(-0.838435, 0.792577)
 
 [node name="AudioCollectCoin" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamSample_0y2s6")
 
 [node name="AudioWalk" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_23iof")
-volume_db = -10.0
+stream = ExtResource("6_j5s2s")

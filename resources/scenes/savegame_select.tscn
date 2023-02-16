@@ -28,8 +28,8 @@ position = Vector2(491, 481)
 save_game_name = "save_one"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/SaveGameArea"]
-position = Vector2(-362, -416)
 z_index = 1
+position = Vector2(-362, -416)
 polygon = PackedVector2Array(303, 567, 326, 587, 406, 542, 368, 536)
 
 [node name="SaveGameArea2" parent="TileMap" instance=ExtResource("48_4u3i5")]
@@ -42,9 +42,9 @@ position = Vector2(-1093, -464)
 polygon = PackedVector2Array(1067, 581, 1038, 581, 1023, 590, 1110, 639, 1128, 613)
 
 [node name="Player" parent="TileMap" instance=ExtResource("44_wxgsl")]
-position = Vector2(764, 567)
 z_index = 1
 y_sort_enabled = true
+position = Vector2(764, 567)
 starting_direction = Vector2(0, 1)
 zoom = Vector2(0.9, 0.9)
 
