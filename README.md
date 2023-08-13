@@ -20,7 +20,7 @@ Key Features
 
 - Music and Sound Effects
 - 2D Animations
-- build with Godot 4.0 – Beta 2
+- runs with Godot 4.1
 
 
 Known Issues
