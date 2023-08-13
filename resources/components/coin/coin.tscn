@@ -41,7 +41,34 @@ region = Rect2(171, 172, 83, 83)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1xco0"]
 animations = [{
-"frames": [SubResource("AtlasTexture_syvxg"), SubResource("AtlasTexture_50vkk"), SubResource("AtlasTexture_ha760"), SubResource("AtlasTexture_km3w7"), SubResource("AtlasTexture_2ppge"), SubResource("AtlasTexture_d8kk7"), SubResource("AtlasTexture_fkclr"), SubResource("AtlasTexture_77ctm"), SubResource("AtlasTexture_3q75r")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syvxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50vkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha760")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km3w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ppge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8kk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkclr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77ctm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q75r")
+}],
 "loop": true,
 "name": &"rotate",
 "speed": 5.0
@@ -52,17 +79,18 @@ radius = 20.0
 height = 82.0
 
 [node name="Coin" type="Area2D"]
-position = Vector2(0, -10)
 z_index = 1
 y_sort_enabled = true
+position = Vector2(0, -10)
 script = ExtResource("1_r41yn")
 metadata/_edit_horizontal_guides_ = []
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-frames = SubResource("SpriteFrames_1xco0")
+sprite_frames = SubResource("SpriteFrames_1xco0")
 animation = &"rotate"
-frame = 7
-playing = true
+autoplay = "rotate"
+frame = 1
+frame_progress = 0.29141
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 27)
