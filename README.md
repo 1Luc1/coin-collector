@@ -20,7 +20,7 @@ Key Features
 
 - Music and Sound Effects
 - 2D Animations
-- runs with Godot 4.2
+- runs with Godot 4.3
 
 
 Known Issues
