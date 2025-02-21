@@ -1,7 +1,7 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
+type="AudioStreamWAV"
 uid="uid://trx3derjq2mx"
 path="res://.godot/imported/Footstep_Tile_Right.wav-b6ff5ad4dd20759e73d07095dd131caa.sample"
 

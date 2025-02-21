@@ -3,7 +3,7 @@ extends Node2D
 var time = 0
 
 func _ready():
-	Global.max_coins = $TileMap/Coins.get_child_count()
+	Global.max_coins = $TileMapLayer/Coins.get_child_count()
 
 
 func _process(delta):

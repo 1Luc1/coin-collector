@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://i5xe4guwit27"]
+[gd_scene load_steps=5 format=4 uid="uid://i5xe4guwit27"]
 
 [ext_resource type="TileSet" uid="uid://chbono26jnxpy" path="res://assets/tileset.tres" id="1_n5bk3"]
 [ext_resource type="PackedScene" uid="uid://dj66dyvha42or" path="res://resources/components/player/level_player.tscn" id="44_wxgsl"]
@@ -8,45 +8,47 @@
 [node name="SavegameSelect" type="Node"]
 metadata/_edit_horizontal_guides_ = []
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 tile_set = ExtResource("1_n5bk3")
-format = 2
-layer_0/name = "Floor"
-layer_0/y_sort_enabled = true
-layer_0/tile_data = PackedInt32Array(262144, 0, 11, 262145, 0, 11, 262146, 131072, 11, 327680, 131072, 11, 327681, 65536, 11, 327682, 65536, 11, 393216, 196608, 11, 393217, 131072, 11, 393218, 65536, 11, 458752, 196608, 11, 458753, 196608, 11, 458754, 131072, 11, 524288, 196608, 11, 524289, 196608, 11, 524290, 65536, 11, 589824, 131072, 11, 589825, 0, 11, 589826, 131072, 11, 655360, 131072, 11, 655361, 196608, 11, 655362, 65536, 11, 720896, 131072, 11, 720897, 0, 11, 720898, 0, 11, 786432, 65536, 11, 786433, 65536, 11, 786434, 131072, 11, 262147, 65536, 11, 262148, 131072, 11, 262149, 0, 11, 327683, 65536, 11, 327684, 0, 11, 393219, 0, 11, 393220, 131072, 11, 393221, 196608, 11, 458755, 0, 11, 458756, 0, 11, 524291, 65536, 11, 524292, 65536, 11, 524293, 65536, 11, 589827, 131072, 11, 589828, 196608, 11, 655363, 0, 11, 655364, 0, 11, 655365, 65536, 11, 720899, 131072, 11, 720900, 0, 11, 786435, 131072, 11, 786436, 131072, 11, 786437, 0, 11, 851968, 131072, 11, 851969, 196608, 11, 851970, 131072, 11, 851971, 131072, 11, 851972, 131072, 11, 196608, 0, 11, 196609, 131072, 11, 196610, 196608, 11, 196611, 131072, 11, 196612, 131072, 11, 917507, 131074, 6, 917508, 131074, 6, 917506, 131074, 6, 917505, 131074, 6, 917504, 65538, 6, 917503, 65538, 6, 786431, 65538, 6, 655359, 65538, 6, 524287, 65538, 6, 393215, 65538, 6, 917509, 2, 6, 851973, 2, 6, 720901, 2, 6, 589829, 2, 6, 458757, 2, 6, 327685, 2, 6)
-layer_1/name = "Wall"
-layer_1/enabled = true
-layer_1/modulate = Color(1, 1, 1, 1)
-layer_1/y_sort_enabled = true
-layer_1/y_sort_origin = 0
-layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(589827, 5, 1, 589825, 11, 1, 196613, 65570, 3, 131077, 65570, 3, 131076, 196642, 3, 196611, 131106, 2, 196610, 131106, 2, 131075, 196642, 3, 131074, 196642, 3, 131073, 196642, 3, 131072, 196642, 3, 196609, 131106, 2, 196608, 131106, 2, 262143, 196642, 3)
 
-[node name="SaveGameArea" parent="TileMap" instance=ExtResource("48_4u3i5")]
+[node name="SaveGameArea" parent="TileMapLayer" instance=ExtResource("48_4u3i5")]
 position = Vector2(491, 481)
 save_game_name = "save_one"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/SaveGameArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMapLayer/SaveGameArea"]
 z_index = 1
 position = Vector2(-362, -416)
 polygon = PackedVector2Array(303, 567, 326, 587, 406, 542, 368, 536)
 
-[node name="SaveGameArea2" parent="TileMap" instance=ExtResource("48_4u3i5")]
+[node name="SaveGameArea2" parent="TileMapLayer" instance=ExtResource("48_4u3i5")]
 position = Vector2(1064, 482)
 save_game_name = "save_two"
 camera_direction = 1
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/SaveGameArea2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMapLayer/SaveGameArea2"]
 position = Vector2(-1093, -464)
 polygon = PackedVector2Array(1067, 581, 1038, 581, 1023, 590, 1110, 639, 1128, 613)
 
-[node name="Player" parent="TileMap" instance=ExtResource("44_wxgsl")]
+[node name="Player" parent="TileMapLayer" instance=ExtResource("44_wxgsl")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(764, 567)
 starting_direction = Vector2(0, 1)
 zoom = Vector2(0.9, 0.9)
+
+[node name="Floor" type="TileMapLayer" parent="TileMapLayer"]
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAQAAAAAAAsAAAABAAQAAAAAAAsAAAACAAQAAAACAAsAAAAAAAUAAAACAAsAAAABAAUAAAABAAsAAAACAAUAAAABAAsAAAAAAAYAAAADAAsAAAABAAYAAAACAAsAAAACAAYAAAABAAsAAAAAAAcAAAADAAsAAAABAAcAAAADAAsAAAACAAcAAAACAAsAAAAAAAgAAAADAAsAAAABAAgAAAADAAsAAAACAAgAAAABAAsAAAAAAAkAAAACAAsAAAABAAkAAAAAAAsAAAACAAkAAAACAAsAAAAAAAoAAAACAAsAAAABAAoAAAADAAsAAAACAAoAAAABAAsAAAAAAAsAAAACAAsAAAABAAsAAAAAAAsAAAACAAsAAAAAAAsAAAAAAAwAAAABAAsAAAABAAwAAAABAAsAAAACAAwAAAACAAsAAAADAAQAAAABAAsAAAAEAAQAAAACAAsAAAAFAAQAAAAAAAsAAAADAAUAAAABAAsAAAAEAAUAAAAAAAsAAAADAAYAAAAAAAsAAAAEAAYAAAACAAsAAAAFAAYAAAADAAsAAAADAAcAAAAAAAsAAAAEAAcAAAAAAAsAAAADAAgAAAABAAsAAAAEAAgAAAABAAsAAAAFAAgAAAABAAsAAAADAAkAAAACAAsAAAAEAAkAAAADAAsAAAADAAoAAAAAAAsAAAAEAAoAAAAAAAsAAAAFAAoAAAABAAsAAAADAAsAAAACAAsAAAAEAAsAAAAAAAsAAAADAAwAAAACAAsAAAAEAAwAAAACAAsAAAAFAAwAAAAAAAsAAAAAAA0AAAACAAsAAAABAA0AAAADAAsAAAACAA0AAAACAAsAAAADAA0AAAACAAsAAAAEAA0AAAACAAsAAAAAAAMAAAAAAAsAAAABAAMAAAACAAsAAAACAAMAAAADAAsAAAADAAMAAAACAAsAAAAEAAMAAAACAAsAAAADAA4AAgACAAYAAAAEAA4AAgACAAYAAAACAA4AAgACAAYAAAABAA4AAgACAAYAAAAAAA4AAgABAAYAAAD//w0AAgABAAYAAAD//wsAAgABAAYAAAD//wkAAgABAAYAAAD//wcAAgABAAYAAAD//wUAAgABAAYAAAAFAA4AAgAAAAYAAAAFAA0AAgAAAAYAAAAFAAsAAgAAAAYAAAAFAAkAAgAAAAYAAAAFAAcAAgAAAAYAAAAFAAUAAgAAAAYAAAA=")
+tile_set = ExtResource("1_n5bk3")
+
+[node name="Wall" type="TileMapLayer" parent="TileMapLayer"]
+z_index = 1
+y_sort_enabled = true
+use_parent_material = true
+tile_map_data = PackedByteArray("AAADAAkABQAAAAEAAAABAAkACwAAAAEAAAAFAAMAIgABAAMAAAAFAAIAIgABAAMAAAAEAAIAIgADAAMAAAADAAMAIgACAAIAAAACAAMAIgACAAIAAAADAAIAIgADAAMAAAACAAIAIgADAAMAAAABAAIAIgADAAMAAAAAAAIAIgADAAMAAAABAAMAIgACAAIAAAAAAAMAIgACAAIAAAD//wMAIgADAAMAAAA=")
+tile_set = ExtResource("1_n5bk3")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("48_htor3")

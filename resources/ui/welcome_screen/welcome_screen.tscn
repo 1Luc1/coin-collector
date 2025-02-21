@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://d3vlw6flqmvnm"]
 
 [ext_resource type="Texture2D" uid="uid://ds4dde0m7bryx" path="res://assets/cc_title.png" id="1_ag6p3"]
-[ext_resource type="Script" path="res://resources/ui/welcome_screen/welcome_screen.gd" id="1_p4sks"]
+[ext_resource type="Script" uid="uid://cl6ioqp7f8vmv" path="res://resources/ui/welcome_screen/welcome_screen.gd" id="1_p4sks"]
 [ext_resource type="AudioStream" uid="uid://7jrb6t2jeums" path="res://assets/audio/UI_Quirky20.wav" id="3_vooac"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwuwj"]
@@ -17,13 +17,13 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ueibt"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0plw"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1wmg"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ueibt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsiuj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1wmg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lp2kj"]
 
@@ -96,8 +96,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wtv1f"]
 _data = {
-"RESET": SubResource("Animation_yd5hu"),
-"appear": SubResource("Animation_npj2s")
+&"RESET": SubResource("Animation_yd5hu"),
+&"appear": SubResource("Animation_npj2s")
 }
 
 [node name="WelcomeScreen" type="Control"]
@@ -105,6 +105,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_p4sks")
 
 [node name="Menu" type="PanelContainer" parent="."]
@@ -126,10 +128,6 @@ metadata/_edit_layout_mode = 1
 
 [node name="Margin" type="MarginContainer" parent="Menu"]
 layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 297.0
-offset_bottom = 297.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -137,46 +135,31 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/Margin"]
 layout_mode = 2
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 284.0
-offset_bottom = 284.0
 theme_override_constants/separation = 16
 alignment = 1
 
 [node name="PlayButton" type="Button" parent="Menu/Margin/Buttons"]
 layout_mode = 2
-offset_top = 64.0
-offset_right = 274.0
-offset_bottom = 113.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.980392, 0.901961, 0.576471, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.980392, 0.901961, 0.576471, 1)
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ueibt")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_j0plw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ueibt")
 text = "PLAY"
 
 [node name="QuitButton" type="Button" parent="Menu/Margin/Buttons"]
 layout_mode = 2
-offset_top = 129.0
-offset_right = 274.0
-offset_bottom = 171.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.956863, 0.878431, 0.584314, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.956863, 0.878431, 0.584314, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxEmpty_k1wmg")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_jsiuj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k1wmg")
 text = "QUIT"
 
 [node name="CreditsButton" type="Button" parent="Menu/Margin/Buttons"]
 layout_mode = 2
-offset_top = 187.0
-offset_right = 274.0
-offset_bottom = 210.0
-grow_horizontal = 0
-grow_vertical = 0
 size_flags_vertical = 8
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lp2kj")
@@ -202,7 +185,7 @@ metadata/_edit_layout_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wtv1f")
+&"": SubResource("AnimationLibrary_wtv1f")
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

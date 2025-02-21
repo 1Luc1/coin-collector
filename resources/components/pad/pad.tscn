@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg2vt4yp4vfgq"]
 
-[ext_resource type="Script" path="res://resources/components/pad/pad.gd" id="1_umf8c"]
+[ext_resource type="Script" uid="uid://b4ufvwnfqvha8" path="res://resources/components/pad/pad.gd" id="1_umf8c"]
 [ext_resource type="PackedScene" path="res://resources/scenes/levels/1-1.tscn" id="2_7sb5t"]
 
 [node name="Pad" type="Area2D" groups=["pad"]]
