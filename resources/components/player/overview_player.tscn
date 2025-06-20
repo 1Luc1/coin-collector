@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bicmkm0wmwnbv" path="res://resources/components/player/overview_player.gd" id="1_3ayn6"]
 [ext_resource type="Texture2D" uid="uid://b5nmvq321idyk" path="res://assets/tile_sets/spaghetti_atlas.png" id="1_ng2p0"]
-[ext_resource type="AudioStream" uid="uid://c4hjo10oic6pa" path="res://assets/audio/Footstep_Tile_Right.mp3" id="3_bgy0s"]
-[ext_resource type="AudioStream" uid="uid://clpaqk84mo5iw" path="res://assets/audio/Footstep_Tile_Left.mp3" id="4_rvhy3"]
+[ext_resource type="AudioStream" uid="uid://trx3derjq2mx" path="res://assets/audio/Footstep_Tile_Right.wav" id="3_6ndpt"]
+[ext_resource type="AudioStream" uid="uid://dq4ksm1kfxsv" path="res://assets/audio/Footstep_Tile_Left.wav" id="4_tsy8l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oa5w4"]
 radius = 14.0
@@ -381,13 +381,13 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_bgy0s")
+"stream": ExtResource("3_6ndpt")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("4_rvhy3")
+"stream": ExtResource("4_tsy8l")
 }],
-"times": PackedFloat32Array(0, 0.3)
+"times": PackedFloat32Array(0.06666667, 0.33333334)
 }
 tracks/0/use_blend = true
 tracks/1/type = "value"
@@ -441,13 +441,13 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_bgy0s")
+"stream": ExtResource("3_6ndpt")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("4_rvhy3")
+"stream": ExtResource("4_tsy8l")
 }],
-"times": PackedFloat32Array(0, 0.3)
+"times": PackedFloat32Array(0.1, 0.33333334)
 }
 tracks/1/use_blend = true
 tracks/2/type = "value"
@@ -489,13 +489,13 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_bgy0s")
+"stream": ExtResource("3_6ndpt")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("4_rvhy3")
+"stream": ExtResource("4_tsy8l")
 }],
-"times": PackedFloat32Array(0, 0.3)
+"times": PackedFloat32Array(0.06666667, 0.33333334)
 }
 tracks/1/use_blend = true
 tracks/2/type = "value"
@@ -537,13 +537,13 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_bgy0s")
+"stream": ExtResource("3_6ndpt")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("4_rvhy3")
+"stream": ExtResource("4_tsy8l")
 }],
-"times": PackedFloat32Array(0, 0.3)
+"times": PackedFloat32Array(0.10000001, 0.36666667)
 }
 tracks/1/use_blend = true
 tracks/2/type = "value"
@@ -580,16 +580,14 @@ shape = SubResource("CapsuleShape2D_oa5w4")
 position = Vector2(0, -62)
 sprite_frames = SubResource("SpriteFrames_nf7co")
 animation = &"idle"
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_aucyp")
+&"": SubResource("AnimationLibrary_aucyp")
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamMP3_mhsm5")
 volume_db = -5.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
