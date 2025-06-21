@@ -13,6 +13,7 @@ y_sort_enabled = true
 tile_set = ExtResource("1_n5bk3")
 
 [node name="SaveGameArea" parent="TileMapLayer" instance=ExtResource("48_4u3i5")]
+visible = false
 position = Vector2(491, 481)
 save_game_name = "save_one"
 
@@ -22,6 +23,7 @@ position = Vector2(-362, -416)
 polygon = PackedVector2Array(303, 567, 326, 587, 406, 542, 368, 536)
 
 [node name="SaveGameArea2" parent="TileMapLayer" instance=ExtResource("48_4u3i5")]
+visible = false
 position = Vector2(1064, 482)
 save_game_name = "save_two"
 camera_direction = 1

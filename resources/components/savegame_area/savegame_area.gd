@@ -14,7 +14,6 @@ var max_coin_count: int = 0
 @onready var viewport: Viewport = $SubViewport.get_viewport()
 
 func _ready():
-	# TODO this seems to use the same texture for all instances
 	$Sprite2D.texture = viewport.get_texture()
 	
 	# load save game
@@ -47,6 +46,7 @@ func _on_save_game_area_body_entered(body):
 	if body.is_in_group("player"):
 		in_zone = true
 		set_label_3d(in_zone)
+		visible = true
 
 
 func _on_save_game_area_body_exited(body):
@@ -54,6 +54,7 @@ func _on_save_game_area_body_exited(body):
 		in_zone = false
 		delete_mode = false
 		set_label_3d(in_zone)
+		visible = false
 
 
 func load_savegame() -> void:
@@ -92,4 +93,3 @@ func get_coins_count_from_scene(file_name) -> int:
 		if "Coin" in node_name:
 			coin_count += 1
 	return coin_count
-
